@@ -6,7 +6,7 @@ const validateInput = (el) => {
         resultsContainer.innerHTML = "<p>Type something in the above search input</p>"
     }else{
         if (timeoutId) clearTimeout(timeoutId);
-        timeoutId = setTimeout(generateResults, 100, el.value, el);
+        timeoutId = setTimeout(generateResults, 300, el.value, el);
     }
 }
 
