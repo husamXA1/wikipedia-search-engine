@@ -1,10 +1,12 @@
 let resultsContainer = document.getElementsByClassName("container")[0]
+let timeoutId;
 
 const validateInput = (el) => {
     if(el.value === ""){
         resultsContainer.innerHTML = "<p>Type something in the above search input</p>"
     }else{
-        generateResults(el.value, el)
+        if (timeoutId) clearTimeout(timeoutId);
+        timeoutId = setTimeout(generateResults, 100, el.value, el);
     }
 }
 
